@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Deen Clothing product management dashboard">
+
+    <title>Deen Clothing | Admin</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <h2>Store Admin</h2>
+
+        <a href="#products" class="active">Products</a>
+
+        <a href="https://danny-x-247.github.io/deenclothin/" target="_blank">
+            View Website
+        </a>
+
+        <button type="button" id="logoutBtn" class="btn">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <div class="header">
+
+            <div>
+                <h1>Products</h1>
+                <p>Manage your store products and new arrivals.</p>
+            </div>
+
+            <div class="admin-user" id="adminUser">
+                Admin
+            </div>
+
+        </div>
+
+
+        <!-- STATUS MESSAGE -->
+        <div id="statusMessage"></div>
+
+
+        <!-- ADD PRODUCT -->
+        <section class="products-section">
+
+            <div class="header">
+                <h2>Add New Product</h2>
+            </div>
+
+
+            <form id="productForm">
+
+                <!-- PRODUCT NAME -->
+                <input
+                    type="text"
+                    id="productName"
+                    placeholder="Product name"
+                    required
+                >
+
+
+                <!-- CATEGORY -->
+                <input
+                    type="text"
+                    id="productCategory"
+                    placeholder="Category e.g. Shoes"
+                    required
+                >
+
+
+                <!-- PRICE -->
+                <input
+                    type="number"
+                    id="productPrice"
+                    placeholder="Price e.g. 24000"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+
+                <!-- BADGE -->
+                <input
+                    type="text"
+                    id="productBadge"
+                    placeholder="Badge (optional) e.g. New"
+                >
+
+
+                <!-- PRODUCT IMAGE -->
+                <div class="image-upload">
+
+                    <label for="productImage">
+                        Product Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="productImage"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+
+                </div>
+
+
+                <!-- IMAGE PREVIEW -->
+                <div id="imagePreviewContainer">
+
+                    <img
+                        id="imagePreview"
+                        src=""
+                        alt="Product preview"
+                        hidden
+                    >
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <button
+                    type="submit"
+                    class="btn btn-add"
+                    id="addProductBtn"
+                >
+                    Add Product
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- PRODUCT LIST -->
+        <section class="products-section" id="products">
+
+            <div class="header">
+
+                <h2>Current Products</h2>
+
+            </div>
+
+
+            <table class="product-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Image</th>
+
+                        <th>Product</th>
+
+                        <th>Category</th>
+
+                        <th>Price</th>
+
+                        <th>Badge</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="productList">
+
+                    <!-- Products from Supabase will appear here -->
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <!-- SUPABASE JAVASCRIPT LIBRARY -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- YOUR ADMIN JAVASCRIPT -->
+    <script src="admin.js"></script>
+
+</body>
+</html>

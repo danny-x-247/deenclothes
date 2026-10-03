@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Deen Clothing - stylish clothing and fashion pieces. Browse our collection and order on WhatsApp.">
+  <title>Deen Clothing | Fashion & Style</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#home"><span>DEEN</span> CLOTHING</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <nav id="nav">
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#gallery">Gallery</a>
+      <a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" id="cartBtn">Bag <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">STYLE • QUALITY • CONFIDENCE</p>
+        <h1>Wear your<br><em>confidence.</em></h1>
+        <p class="hero-text">Discover carefully selected fashion pieces from Deen Clothing. Browse our collection and order directly on WhatsApp.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#shop">Shop Collection</a>
+          <a class="btn light" href="#contact">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-card">
+  <div class="hero-placeholder">
+    <img
+      src="assets/storefront.jpeg"
+      alt="Deen Clothing storefront"
+    >
+  </div>
+</div>
+      
+    </section>
+
+    <section class="trust">
+      <div><strong>01</strong><span>Quality pieces</span></div>
+      <div><strong>02</strong><span>Easy WhatsApp ordering</span></div>
+      <div><strong>03</strong><span>Fast customer support</span></div>
+      <div><strong>04</strong><span>Pickup & delivery</span></div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="section-head">
+        <div><p class="eyebrow">OUR COLLECTION</p><h2>Shop the latest</h2></div>
+        <div class="filters">
+          <button class="filter active" data-category="All">All</button>
+          <button class="filter" data-category="Shoes">Shoes</button>
+          <button class="filter" data-category="Tops">Tops</button>
+          <button class="filter" data-category="Sets">Sets</button>
+          <button class="filter" data-category="Trousers">Trousers</button>
+        </div>
+      </div>
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="section-head">
+        <div><p class="eyebrow">STYLE GALLERY</p><h2>See it. Love it.</h2></div>
+        <p class="muted"></p>
+      </div>
+      <div class="gallery" id="galleryGrid"></div>
+    </section>
+
+    <section class="about" id="about">
+      <div>
+        <p class="eyebrow">ABOUT DEEN CLOTHING</p>
+        <h2>Fashion that feels like you.</h2>
+      </div>
+      <div>
+        <p>Deen Clothing is a fashion boutique focused on helping customers find stylish, comfortable pieces for everyday wear, occasions and special moments.</p>
+        <p>We use this website as our online catalogue. Customers can choose an item, add it to their bag, and send the order straight to your WhatsApp.</p>
+        <p>We also make delivery of product purchased all over Nigeria</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">LET'S CONNECT</p>
+        <h2>Ready to order?</h2>
+        <p>Have a question about size, colour, availability or delivery? Contact Deen Clothing directly.</p>
+        <div class="contact-buttons">
+          <a class="btn primary" id="whatsappLink" href="http://wa.me/2348139096643" target="_blank">WhatsApp Us</a>
+          <a class="btn outline" id="phoneLink" href="tel: +2348139096643">Call Us</a>
+          <a class="btn outline" id="mapLink" href="#" target="_blank">Get Directions</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-row"><span>WhatsApp</span><strong id="displayWhatsapp"
+          href="https://wa.me/+2348139096643" target="_blank" rel="noopener"
+          >Contact Us On Whatsapp</strong></div>
+        <div class="contact-row"><span>Phone</span><strong id="displayPhone" href="tel:+2348139096643">+234 813 909 6643</strong></div>
+        <div class="contact-row"><span>Location</spansrc=""><strong id="displayAddress">Your boutique address</strong></div>
+        <div class="contact-row"><span>Opening hours</span><strong>Mon – Sat · 9:00 AM – 12:00 PM</strong></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><a class="logo" href="#home"><span>DEEN</span> CLOTHING</a><p>Style made simple.</p></div>
+    <p>© <span id="year"></span> Deen Clothing. All rights reserved.</p>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay">
+    <aside class="cart">
+      <div class="cart-top"><h3>Your Bag</h3><button id="closeCart">×</button></div>
+      <div id="cartItems" class="cart-items"><p class="empty">Your bag is empty.</p></div>
+      <div class="cart-bottom">
+        <div class="total"><span>Estimated total</span><strong id="cartTotal">₦0</strong></div>
+        <button class="btn primary full" id="orderBtn">Order on WhatsApp</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
